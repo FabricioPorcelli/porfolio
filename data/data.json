@@ -1,0 +1,44 @@
+{
+  "skills": [
+    "Python",
+    "SQL",
+    "Pandas",
+    "scikit-learn",
+    "TensorFlow",
+    "PyTorch",
+    "Docker",
+    "Git",
+    "Machine Learning",
+    "Cloud (AWS)"
+  ],
+  "projects": [
+    {
+      "title": "Solución End-to-End de Business Intelligence",
+      "description": "Integración de datos corporativos de diferentes fuentes mediante pipelines ETL (SSIS), modelado de Data Warehouse, e informes con visualizaciones en Power BI.",
+      "tags": ["ETL", "MySQL", "MS-SQL-Server","SSIS", "Data-Warehouse", "SQL", "PowerBI"],
+      "githubUrl": "https://github.com/FabricioPorcelli/BBDD2-TUIA-TF",
+      "externalUrl": "#"
+    },
+    {
+      "title": "Agentic RAG",
+      "description": "Proyecto de implementación de un asistente virtual conversacional especializado en una empresa de electrodomésticos. Utiliza una arquitectura RAG (Retrieval-Augmented Generation) combinada con un agente autónomo ReAct (Reasoning + Acting) para responder consultas.",
+      "tags": ["RAG", "Agents", "ReAct", "GrafoDB", "ChromaDB", "LLM", "LangChain"],
+      "githubUrl": "https://github.com/FabricioPorcelli/NLP-TUIA-TF",
+      "externalUrl": "#"
+    },
+    {
+      "title": "Solar Power Generation Forecasting with Machine Learning",
+      "description": "Pipeline de Machine Learning a nivel de producción para pronosticar la generación de energía solar (kW) utilizando datos meteorológicos y temporales históricos.",
+      "tags": ["Python", "Machine-Learning", "Forecasting", "Streamlit", "SHAP", "EDA"],
+      "githubUrl": "https://github.com/FabricioPorcelli/Solar-Energy-Forecasting",
+      "externalUrl": "#"
+    },
+    {
+      "title": "Deteccion automatica de carriles por procesamiento de imagenes",
+      "description": "Proyecto academico sobre deteccion de carriles a partir de secuencias de video, mediante tecnicas de procesamiento de imagenes. Se implementan tecnicas de filtrado, deteccion de bordes (Canny) y transformada de Hough para identificar los carriles en cada frame del video.",
+      "tags": ["Python", "Image-Processing", "ROI", "Canny", "Hough"],
+      "githubUrl": "https://github.com/FabricioPorcelli/TUIA-PDI-TP3-2025",
+      "externalUrl": "#"
+    }
+  ]
+}
