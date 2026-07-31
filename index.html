@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fabricio Porcelli | Portfolio</title>
+  <meta name="description" content="AI & Machine Learning Engineer skilled in end-to-end ML, data preparation, model evaluation, and computer vision. Python, SQL, ETL, AWS.">
+  <meta property="og:title" content="Fabricio Porcelli | AI & ML Engineer">
+  <meta property="og:description" content="AI & Machine Learning Engineer skilled in end-to-end ML, data preparation, model evaluation, and computer vision.">
+  <meta property="og:image" content="https://fabricioporcelli.github.io/porfolio/images/perfil.jpeg">
+  <meta property="og:url" content="https://fabricioporcelli.github.io/porfolio/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="svgs/code.svg">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
@@ -15,11 +22,12 @@
         Fabricio Porcelli
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio" class="nav-link active" data-section="inicio">inicio</a></li>
-        <li><a href="#proyectos" class="nav-link" data-section="proyectos">proyectos</a></li>
-        <li><a href="#curriculum" class="nav-link" data-section="curriculum">curriculum</a></li>
-        <li><a href="#contacto" class="nav-link" data-section="contacto">contacto</a></li>
+        <li><a href="#inicio" class="nav-link active" data-section="inicio" data-i18n="nav.inicio">home</a></li>
+        <li><a href="#proyectos" class="nav-link" data-section="proyectos" data-i18n="nav.proyectos">projects</a></li>
+        <li><a href="#curriculum" class="nav-link" data-section="curriculum" data-i18n="nav.curriculum">resume</a></li>
+        <li><a href="#contacto" class="nav-link" data-section="contacto" data-i18n="nav.contacto">contact</a></li>
       </ul>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">EN</button>
       <button class="menu-toggle" id="menu-toggle" aria-label="Menú de navegación">
         <span></span>
         <span></span>
@@ -33,21 +41,26 @@
     <section id="inicio" class="hero">
       <div class="container">
         <div class="hero-content fade-in">
-          <p class="hero-greeting"><span class="comment">//</span> hello, i'm</p>
-          <h1 class="hero-name">Fabricio Porcelli.</h1>
-          <p class="hero-subtitle">
-            Estudiante de <span class="accent-blue">Inteligencia Artificial</span>
-            & <span class="accent-green">Ciencia de Datos</span>
-          </p>
-          <p class="hero-desc">
-            Actualmente estudiante avanzado de inteligencia artificial en la Universidad Nacional de Rosario,
-            Argentina. Apasionado por el desarrollo de software, la ingenieria de datos y el machine learning.
-            En constante búsqueda de nuevos desafíos y aprendizajes para construir soluciones
-            que combinen tecnología y datos.
-          </p>
-          <div class="hero-actions">
-            <a href="mailto:fabricioporcelli@gmail.com" class="btn btn-primary">Contactarme</a>
-            <a href="#proyectos" class="btn btn-outline">Ver proyectos <span class="arrow">→</span></a>
+          <div class="hero-text">
+            <p class="hero-greeting"><span class="comment">//</span> <span data-i18n="hero.greeting">hello, i'm</span></p>
+            <h1 class="hero-name">Fabricio Porcelli.</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+              <span class="accent-blue">AI & Machine Learning</span>
+              <span class="accent-green">Engineer</span>
+            </p>
+            <p class="hero-desc" data-i18n="hero.desc">
+              skilled in end-to-end machine learning, data preparation, model evaluation, and
+              computer vision. Proficient in Python, SQL, ETL design, and business process
+              automation, with practical experience deploying analytics solutions and pursuing
+              AWS Data Engineering certification.
+            </p>
+            <div class="hero-actions">
+              <a href="mailto:fabricioporcelli@gmail.com" class="btn btn-primary" data-i18n="hero.contact">Contact me</a>
+              <a href="#proyectos" class="btn btn-outline" data-i18n="hero.projects">View projects <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="images/perfil.jpeg" alt="Fabricio Porcelli" />
           </div>
         </div>
       </div>
@@ -58,7 +71,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-number">01.</span>
-          <h2 class="section-title">proyectos</h2>
+          <h2 class="section-title" data-i18n="section.projects">projects</h2>
           <div class="section-line"></div>
         </div>
         <div class="projects-grid" id="projects-grid"></div>
@@ -70,36 +83,56 @@
       <div class="container">
         <div class="section-header">
           <span class="section-number">02.</span>
-          <h2 class="section-title">curriculum</h2>
+          <h2 class="section-title" data-i18n="section.resume">resume</h2>
           <div class="section-line"></div>
         </div>
         <div class="curriculum-content">
           <div class="curriculum-left">
-            <h3>// formación</h3>
+            <h3 data-i18n="edu.title">// education</h3>
             <div class="edu-item">
-              <p class="edu-date">2024 — presente</p>
-              <p class="edu-title">Tecnicatura Universitaria en Inteligencia Artificial</p>
-              <p class="edu-institution">Universidad Nacional de Rosario</p>
+              <p class="edu-date" data-i18n="edu.aws.date">In Progress</p>
+              <p class="edu-title" data-i18n="edu.aws">Data Engineering Professional Certificate (AWS)</p>
+              <p class="edu-institution" data-i18n="edu.aws.inst">DeepLearning.AI</p>
             </div>
             <div class="edu-item">
+              <p class="edu-date">2024 — 2026</p>
+              <p class="edu-title" data-i18n="edu.tuia">Associate Degree in Artificial Intelligence</p>
+              <p class="edu-institution" data-i18n="edu.tuia.inst">Universidad Nacional de Rosario</p>
+            </div>
+            <!-- <div class="edu-item">
               <p class="edu-date">2021 — 2023</p>
-              <p class="edu-title">Analista Universitario de Sistemas</p>
-              <p class="edu-institution">Instituto Politécnico Superior Rosario</p>
-            </div>
+              <p class="edu-title" data-i18n="edu.aus">University Associate Degree in Systems</p>
+              <p class="edu-institution" data-i18n="edu.aus.inst">Instituto Politécnico Superior Rosario</p>
+            </div> -->
             <div class="edu-item">
               <p class="edu-date">2019</p>
-              <p class="edu-title">Técnico en Electrónica</p>
-              <p class="edu-institution">Colegio Salesiano San José</p>
+              <p class="edu-title" data-i18n="edu.tecnico">Electronics Technician</p>
+              <p class="edu-institution" data-i18n="edu.tecnico.inst">Colegio Salesiano San José</p>
             </div>
+            <div class="edu-item">
+              <p class="edu-date">Jun 2018</p>
+              <p class="edu-title" data-i18n="edu.fce">First Certificate in English (B2 Level)</p>
+              <p class="edu-institution" data-i18n="edu.fce.inst">Cambridge English</p>
+            </div>
+            <h3 data-i18n="exp.title">// experience</h3>
+            <div class="edu-item">
+              <p class="edu-date">Jun 2022 — Present</p>
+              <p class="edu-title" data-i18n="exp.role">Administrative & Process Automation</p>
+              <p class="edu-institution" data-i18n="exp.company">Colegio San José</p>
+            </div>
+            <ul class="exp-list">
+              <li data-i18n="exp.bullet1">Process Automation: Developed and implemented desktop applications in Python to automate repetitive administrative tasks, significantly optimizing operational management times.</li>
+              <li data-i18n="exp.bullet2">Data entry and management across local documents and provincial information systems.</li>
+            </ul>
           </div>
           <div class="curriculum-right">
-            <h3>// habilidades</h3>
+            <h3 data-i18n="skills.title">// skills</h3>
             <div class="skills-grid" id="skills-grid"></div>
             <div class="curriculum-download">
-              <p>Versión completa con experiencia laboral y certificaciones.</p>
-              <a href="https://drive.google.com/file/d/1yDcFLRD7GG7WYohjxGIYFXZNNBDnoTV_/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <p data-i18n="cv.text">Full version with work experience and certifications.</p>
+              <a href="https://drive.google.com/file/d/1CHxCLq-ZYE1xVv3JFR_Th_CoHBLo0Dvc/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="cv-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Ver CV (PDF)
+                <span data-i18n="cv.button">View CV (PDF)</span>
               </a>
             </div>
           </div>
@@ -112,15 +145,15 @@
       <div class="container">
         <div class="section-header">
           <span class="section-number">03.</span>
-          <h2 class="section-title">contacto</h2>
+          <h2 class="section-title" data-i18n="section.contact">contact</h2>
           <div class="section-line"></div>
         </div>
         <div class="contact-content">
           <div class="contact-info">
-            <h3>// hablemos</h3>
-            <p>
-              Si tenés un proyecto en mente, una idea para colaborar o simplemente querés
-              conectar, no dudes en escribirme. Estoy abierto a nuevas oportunidades y desafíos.
+            <h3 data-i18n="contact.title">// let's talk</h3>
+            <p data-i18n="contact.desc">
+              If you have a project in mind, an idea to collaborate, or just want to connect,
+              feel free to reach out. I'm open to new opportunities and challenges.
             </p>
             <div class="contact-links">
               <a href="mailto:fabricioporcelli@gmail.com" class="contact-link">
@@ -128,13 +161,6 @@
                 <div>
                   <div class="contact-link-label">Email</div>
                   <div class="contact-link-value">fabricioporcelli@gmail.com</div>
-                </div>
-              </a>
-              <a href="https://wa.me/543413112133" target="_blank" rel="noopener noreferrer" class="contact-link">
-                <svg class="contact-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                <div>
-                  <div class="contact-link-label">WhatsApp</div>
-                  <div class="contact-link-value">+54 341 311-2133</div>
                 </div>
               </a>
               <a href="https://github.com/FabricioPorcelli" target="_blank" rel="noopener noreferrer" class="contact-link">
@@ -155,18 +181,18 @@
           </div>
           <form class="contact-form" id="contact-form">
             <div class="form-group">
-              <label class="form-label" for="name">Nombre</label>
-              <input class="form-input" type="text" id="name" name="name" placeholder="Tu nombre" required>
+              <label class="form-label" for="name" data-i18n="form.name">Name</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="form.name.placeholder" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="email">Email</label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="tu@email.com" required>
+              <label class="form-label" for="email" data-i18n="form.email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" data-i18n-placeholder="form.email.placeholder" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="message">Mensaje</label>
-              <textarea class="form-textarea" id="message" name="message" placeholder="Escribí tu mensaje..." maxlength="1000" required></textarea>
+              <label class="form-label" for="message" data-i18n="form.message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Write your message..." data-i18n-placeholder="form.message.placeholder" maxlength="1000" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            <button type="submit" class="btn btn-primary" data-i18n="form.submit">Send message</button>
           </form>
         </div>
       </div>
