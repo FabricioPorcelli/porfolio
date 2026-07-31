@@ -1,43 +1,87 @@
 {
-  "skills": [
-    "Python",
-    "SQL",
-    "Pandas",
-    "scikit-learn",
-    "TensorFlow",
-    "PyTorch",
-    "Docker",
-    "Git",
-    "Machine Learning",
-    "Cloud (AWS)"
-  ],
+  "skills": {
+    "categories": [
+      {
+        "name": { "en": "Programming Languages", "es": "Lenguajes de Programación" },
+        "color": "#58a6ff",
+        "items": ["Python", "SQL", "R", "Bash / Shell Scripting"]
+      },
+      {
+        "name": { "en": "Data Engineering & BI", "es": "Ingeniería de Datos y BI" },
+        "color": "#3fb950",
+        "items": ["MS SQL Server", "MySQL", "Data Warehousing", "ETL (SSIS)", "Power BI", "Streamlit", "Pandas", "NumPy"]
+      },
+      {
+        "name": { "en": "AI, ML & Data Science", "es": "IA, Machine Learning y Data Science" },
+        "color": "#bc8cff",
+        "items": ["TensorFlow", "PyTorch", "Scikit-Learn", "OpenCV", "YOLO", "Transformers", "Agentic RAG", "LangChain", "Vector DBs (ChromaDB/FAISS)", "Graph DBs", "LLM APIs"]
+      },
+      {
+        "name": { "en": "Data Analysis & Visualization", "es": "Análisis de Datos y Visualización" },
+        "color": "#d29922",
+        "items": ["Matplotlib", "Seaborn", "SciPy", "Jupyter Notebooks"]
+      },
+      {
+        "name": { "en": "Infrastructure & DevOps", "es": "Infraestructura y DevOps" },
+        "color": "#f85149",
+        "items": ["Git / GitHub", "Docker", "Linux / Bash", "AWS"]
+      },
+      {
+        "name": { "en": "Project Management & Agile", "es": "Gestión de Proyectos y Metodologías Ágiles" },
+        "color": "#58a6ff",
+        "items": ["Agile / Scrum", "Kanban", "MoSCoW Prioritization", "SDLC (Iterative & Incremental)", "Trello"]
+      }
+    ]
+  },
   "projects": [
     {
-      "title": "Solución End-to-End de Business Intelligence",
-      "description": "Integración de datos corporativos de diferentes fuentes mediante pipelines ETL (SSIS), modelado de Data Warehouse, e informes con visualizaciones en Power BI.",
-      "tags": ["ETL", "MySQL", "MS-SQL-Server","SSIS", "Data-Warehouse", "SQL", "PowerBI"],
+      "title": "Data Warehousing & Business Intelligence",
+      "description": {
+        "en": "Designed and built an end-to-end ETL pipeline using MS Visual Studio (SSIS) to ingest and transform relational data into a Data Warehouse (MS SQL Server), developing interactive analytical dashboards in Power BI for decision-making.",
+        "es": "Diseño y construcción de un pipeline ETL end-to-end utilizando MS Visual Studio (SSIS) para la ingesta y transformación de datos relacionales hacia un Data Warehouse (MS SQL Server), desarrollando tableros analíticos interactivos en Power BI para la toma de decisiones."
+      },
+      "tags": ["ETL", "SSIS", "MS SQL Server", "Data Warehousing", "Power BI", "SQL"],
       "githubUrl": "https://github.com/FabricioPorcelli/BBDD2-TUIA-TF",
       "externalUrl": "#"
     },
     {
-      "title": "Agentic RAG",
-      "description": "Proyecto de implementación de un asistente virtual conversacional especializado en una empresa de electrodomésticos. Utiliza una arquitectura RAG (Retrieval-Augmented Generation) combinada con un agente autónomo ReAct (Reasoning + Acting) para responder consultas.",
-      "tags": ["RAG", "Agents", "ReAct", "GrafoDB", "ChromaDB", "LLM", "LangChain"],
+      "title": "Agentic Multi-Source RAG",
+      "description": {
+        "en": "Engineered an intelligent conversational assistant using Agentic RAG architecture. Integrated vector (ChromaDB/FAISS), tabular, and graph databases to enable multi-source information retrieval, serving responses through lightweight LLMs via REST APIs.",
+        "es": "Desarrollo de un asistente conversacional basado en arquitectura Agentic RAG. Integración de bases de datos vectoriales (ChromaDB/FAISS), tabulares y de grafos para la recuperación de información multifuente, generando respuestas mediante LLMs livianos a través de APIs REST."
+      },
+      "tags": ["Agentic RAG", "ChromaDB", "FAISS", "Graph DBs", "LangChain", "LLM APIs", "NLP"],
       "githubUrl": "https://github.com/FabricioPorcelli/NLP-TUIA-TF",
       "externalUrl": "#"
     },
     {
-      "title": "Solar Power Generation Forecasting with Machine Learning",
-      "description": "Pipeline de Machine Learning a nivel de producción para pronosticar la generación de energía solar (kW) utilizando datos meteorológicos y temporales históricos.",
-      "tags": ["Python", "Machine-Learning", "Forecasting", "Streamlit", "SHAP", "EDA"],
+      "title": "Solar Energy Forecasting (Machine Learning & MLOps)",
+      "description": {
+        "en": "Developed and deployed a time-series forecasting model for solar power generation based on meteorological data. Handled feature engineering and hyperparameter tuning using Scikit-Learn/Pandas, productizing the solution via a real-time Streamlit web app.",
+        "es": "Desarrollo y despliegue de un modelo de series temporales para la predicción de generación de energía solar basado en variables meteorológicas. Feature engineering y ajuste de hiperparámetros con Scikit-Learn y Pandas, desplegando la solución mediante una aplicación web en tiempo real con Streamlit."
+      },
+      "tags": ["Python", "Machine Learning", "Forecasting", "Streamlit", "Scikit-Learn", "Pandas", "MLOps"],
       "githubUrl": "https://github.com/FabricioPorcelli/Solar-Energy-Forecasting",
       "externalUrl": "#"
     },
     {
-      "title": "Deteccion automatica de carriles por procesamiento de imagenes",
-      "description": "Proyecto academico sobre deteccion de carriles a partir de secuencias de video, mediante tecnicas de procesamiento de imagenes. Se implementan tecnicas de filtrado, deteccion de bordes (Canny) y transformada de Hough para identificar los carriles en cada frame del video.",
-      "tags": ["Python", "Image-Processing", "ROI", "Canny", "Hough"],
-      "githubUrl": "https://github.com/FabricioPorcelli/TUIA-PDI-TP3-2025",
+      "title": "Computer Vision & Facial Recognition",
+      "description": {
+        "en": "Developed real-time computer vision applications utilizing OpenCV and Deep Learning architectures (CNNs/Transfer Learning) for face detection, dog breed classification, and feature extraction.",
+        "es": "Desarrollo de aplicaciones de visión por computadora en tiempo real utilizando OpenCV y arquitecturas de Deep Learning (CNNs / Transfer Learning) para detección facial, clasificación de razas de perros y extracción de características."
+      },
+      "tags": ["Python", "OpenCV", "Deep Learning", "CNNs", "Transfer Learning", "Computer Vision"],
+      "githubUrl": "https://github.com/FabricioPorcelli/tuia-face-recognition-app",
+      "externalUrl": "#"
+    },
+    {
+      "title": "Dog Breed Recognition System",
+      "description": {
+        "en": "Complete Computer Vision pipeline integrating embedding extraction, similarity search, supervised classification, and object detection to identify dog breeds in images. Features a Gradio frontend, async FastAPI backend, and Docker Compose deployment.",
+        "es": "Pipeline completo de Computer Vision que integra extracción de embeddings, búsqueda por similitud, clasificación supervisada y detección de objetos para identificar razas de perros en imágenes. Incluye frontend Gradio, API asincrónica con FastAPI y Docker Compose."
+      },
+      "tags": ["Computer Vision", "Deep Learning", "Embeddings", "Gradio", "Docker", "YOLO", "ResNet", "CNN"],
+      "githubUrl": "https://github.com/FabricioPorcelli/tuia-dog-recognition-app",
       "externalUrl": "#"
     }
   ]
