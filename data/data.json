@@ -34,6 +34,16 @@
     ]
   },
   "projects": [
+        {
+      "title": "AgroVision-Edge | Crop vs Weed Detection",
+      "description": {
+        "en": "Edge-ready computer vision system using YOLOv8n to distinguish crops from weeds with mAP50=0.904. Optimized for on-device inference via ONNX export and INT8 quantization, cutting model size by 42% (6.25 → 3.60 MB) with only 1.84 mAP points lost. Includes CLI and an interactive Streamlit demo.",
+        "es": "Sistema de visión por computadora para dispositivo edge usando YOLOv8n que distingue cultivo de maleza con mAP50=0.904. Optimizado para inferencia on-device mediante exportación a ONNX y cuantización INT8, reduciendo el tamaño del modelo un 42% (6.25 → 3.60 MB) con apenas 1.84 puntos de mAP perdidos. Incluye CLI y demo interactiva con Streamlit."
+      },
+      "tags": ["Computer Vision", "YOLO", "Edge AI", "ONNX", "INT8 Quantization", "Streamlit", "PyTorch"],
+      "githubUrl": "https://github.com/FabricioPorcelli/weed-detection",
+      "externalUrl": "https://agrovisionedge.streamlit.app/"
+    },
     {
       "title": "Data Warehousing & Business Intelligence",
       "description": {
@@ -62,7 +72,7 @@
       },
       "tags": ["Python", "Machine Learning", "Forecasting", "Streamlit", "Scikit-Learn", "Pandas", "MLOps"],
       "githubUrl": "https://github.com/FabricioPorcelli/Solar-Energy-Forecasting",
-      "externalUrl": "#"
+      "externalUrl": "https://solar-energy-forecasting-app.streamlit.app/"
     },
     {
       "title": "Computer Vision & Facial Recognition",
