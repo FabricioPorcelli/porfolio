@@ -45,6 +45,17 @@
       "externalUrl": "https://agrovisionedge.streamlit.app/"
     },
     {
+      "title": "Agricultural Yield Forecasting",
+      "description": {
+        "en": "Prediction of agricultural yield (kg/ha) by province and campaign in Argentina, combining historical crop statistics from the Ministry of Agriculture (SIIA) with NASA POWER climate data. Daily weather is aggregated into phenological phases for soybeans, using a reusable pipeline designed to scale to other crops.",
+        "es": "Predicción del rendimiento agrícola (kg/ha) por provincia y campaña en Argentina, combinando datos históricos de estimaciones agrícolas del Ministerio de Agricultura (SIIA) con datos climáticos de NASA POWER. El clima diario se agrega en fases fenológicas para soja, con un pipeline reutilizable pensado para escalar a otros cultivos."
+      },
+      "tags": ["Python", "Time Series", "Forecasting", "Pandas", "Geopandas", "NASA POWER", "Feature Engineering"],
+      "githubUrl": "https://github.com/FabricioPorcelli/yield-forecasting",
+      "externalUrl": "#",
+      "working": true
+    },
+    {
       "title": "Data Warehousing & Business Intelligence",
       "description": {
         "en": "Designed and built an end-to-end ETL pipeline using MS Visual Studio (SSIS) to ingest and transform relational data into a Data Warehouse (MS SQL Server), developing interactive analytical dashboards in Power BI for decision-making.",
