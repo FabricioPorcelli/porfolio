@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const form = document.getElementById('contact-form');
   const langToggle = document.getElementById('lang-toggle');
+  const archiveToggle = document.getElementById('archive-toggle');
+  const archiveCollapse = document.getElementById('archive-collapse');
 
   let translations = {};
   let currentLang = localStorage.getItem('lang') === 'es' ? 'es' : 'en';
@@ -48,11 +50,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (langToggle) {
-    langToggle.addEventListener('click', () => {
+    langToggle.addEventListener('click', async () => {
+      if (document.body.classList.contains('lang-switching')) return;
       currentLang = currentLang === 'en' ? 'es' : 'en';
       localStorage.setItem('lang', currentLang);
+      document.body.classList.add('lang-switching');
+      langToggle.classList.add('pulse');
+      setTimeout(() => langToggle.classList.remove('pulse'), 450);
+      await new Promise(resolve => setTimeout(resolve, 180));
       applyTranslations(currentLang);
-      reloadPortfolioData();
+      await loadPortfolioData(currentLang);
+      revealInViewportInstant();
+      document.body.classList.remove('lang-switching');
+    });
+  }
+
+  if (archiveToggle && archiveCollapse) {
+    archiveCollapse.addEventListener('transitionend', (e) => {
+      if (e.target === archiveCollapse && e.propertyName === 'grid-template-rows' && archiveCollapse.classList.contains('open')) {
+        archiveCollapse.classList.add('expanded');
+      }
+    });
+
+    archiveToggle.addEventListener('click', () => {
+      const open = !archiveCollapse.classList.contains('open');
+      if (open) {
+        archiveCollapse.classList.add('open');
+      } else {
+        archiveCollapse.classList.remove('expanded');
+        archiveCollapse.classList.remove('open');
+      }
+      archiveToggle.classList.toggle('open', open);
+      archiveToggle.setAttribute('aria-expanded', String(open));
     });
   }
 
@@ -114,6 +143,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadTranslations();
   reloadPortfolioData();
+  registerReveals();
+});
+
+const revealObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) revealElement(entry.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
+  : null;
+
+const revealSelectors = '.section-header, .project-card, .edu-item, .exp-list li, .skill-category, .curriculum-download, .contact-info, .contact-form';
+
+function revealElement(el) {
+  if (el.classList.contains('visible')) return;
+  el.classList.add('visible');
+  if (revealObserver) revealObserver.unobserve(el);
+  el.addEventListener('transitionend', function onReveal(e) {
+    if (e.target !== el || e.propertyName !== 'opacity') return;
+    el.classList.remove('reveal', 'visible');
+    el.style.removeProperty('--rd');
+    el.removeEventListener('transitionend', onReveal);
+  });
+}
+
+function registerReveals() {
+  if (!revealObserver) return;
+  document.querySelectorAll(revealSelectors).forEach(el => {
+    if (el.dataset.reveal) return;
+    el.dataset.reveal = '1';
+    el.classList.add('reveal');
+    const siblings = Array.from(el.parentElement.children).filter(c => c.matches(revealSelectors));
+    const index = siblings.indexOf(el);
+    el.style.setProperty('--rd', `${Math.min(index * 60, 360)}ms`);
+    revealObserver.observe(el);
+  });
+}
+
+function revealInViewportInstant() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    if (el.closest('.archive-collapse:not(.open)')) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.height > 0 && rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.remove('reveal');
+      el.style.removeProperty('--rd');
+    }
+  });
+}
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      if (el.closest('.archive-collapse:not(.open)')) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.height > 0 && rect.top < window.innerHeight && rect.bottom > 0) {
+        revealElement(el);
+      }
+    });
+  }, 1200);
 });
 
 async function loadPortfolioData(lang) {
@@ -121,7 +209,9 @@ async function loadPortfolioData(lang) {
     const res = await fetch('data/data.json');
     const data = await res.json();
     renderSkills(data.skills, lang || 'en');
-    renderProjects(data.projects, lang || 'en');
+    renderProjects(data.projects, lang || 'en', 'projects-grid');
+    renderProjects(data.archivedProjects || [], lang || 'en', 'archive-grid');
+    registerReveals();
   } catch (err) {
     console.error('Error loading portfolio data:', err);
   }
@@ -147,9 +237,14 @@ function renderSkills(skillsData, lang) {
   }).join('');
 }
 
-function renderProjects(projects, lang) {
-  const grid = document.getElementById('projects-grid');
+function renderProjects(projects, lang, gridId) {
+  const grid = document.getElementById(gridId || 'projects-grid');
   if (!grid) return;
+
+  if (!projects.length) {
+    grid.innerHTML = '';
+    return;
+  }
 
   grid.innerHTML = projects.map(p => {
     const desc = typeof p.description === 'object' ? (p.description[lang] || p.description.en) : p.description;
