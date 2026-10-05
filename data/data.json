@@ -4,45 +4,65 @@
       {
         "name": { "en": "Programming Languages", "es": "Lenguajes de Programación" },
         "color": "#58a6ff",
-        "items": ["Python", "SQL", "R", "Bash / Shell Scripting"]
+        "items": ["Python", "SQL", "Bash / Shell Scripting"]
       },
       {
-        "name": { "en": "Data Engineering & BI", "es": "Ingeniería de Datos y BI" },
+        "name": { "en": "Backend & Development", "es": "Backend y Desarrollo" },
         "color": "#3fb950",
-        "items": ["MS SQL Server", "MySQL", "Data Warehousing", "ETL (SSIS)", "Power BI", "Streamlit", "Pandas", "NumPy"]
+        "items": ["Git / GitHub", "Docker", "REST APIs", "FastAPI", "Pydantic", "pytest"]
       },
       {
-        "name": { "en": "AI, ML & Data Science", "es": "IA, Machine Learning y Data Science" },
-        "color": "#bc8cff",
-        "items": ["TensorFlow", "PyTorch", "Scikit-Learn", "OpenCV", "YOLO", "Transformers", "Agentic RAG", "LangChain", "Vector DBs (ChromaDB/FAISS)", "Graph DBs", "LLM APIs"]
-      },
-      {
-        "name": { "en": "Data Analysis & Visualization", "es": "Análisis de Datos y Visualización" },
+        "name": { "en": "Databases", "es": "Bases de Datos" },
         "color": "#d29922",
-        "items": ["Matplotlib", "Seaborn", "SciPy", "Jupyter Notebooks"]
+        "items": ["PostgreSQL", "MySQL", "MS SQL Server", "Data Warehousing", "ETL", "Redis"]
       },
       {
-        "name": { "en": "Infrastructure & DevOps", "es": "Infraestructura y DevOps" },
+        "name": { "en": "Data & Analysis", "es": "Datos y Análisis" },
+        "color": "#bc8cff",
+        "items": ["Pandas", "NumPy", "Power BI", "Matplotlib", "Jupyter Notebooks"]
+      },
+      {
+        "name": { "en": "AI & Machine Learning", "es": "IA y Machine Learning" },
+        "color": "#db61a2",
+        "items": ["Scikit-Learn", "TensorFlow", "PyTorch", "LangChain", "LLM APIs", "Vector DBs (ChromaDB/FAISS)"]
+      },
+      {
+        "name": { "en": "Frontend & Web", "es": "Frontend y Web" },
+        "color": "#39c5cf",
+        "items": ["HTML", "CSS", "JavaScript", "Leaflet", "Chart.js"]
+      },
+      {
+        "name": { "en": "Infrastructure", "es": "Infraestructura" },
         "color": "#f85149",
-        "items": ["Git / GitHub", "Docker", "Linux / Bash", "AWS"]
+        "items": ["Linux", "AWS"]
       },
       {
-        "name": { "en": "Project Management & Agile", "es": "Gestión de Proyectos y Metodologías Ágiles" },
+        "name": { "en": "Methodologies", "es": "Metodologías" },
         "color": "#58a6ff",
-        "items": ["Agile / Scrum", "Kanban", "MoSCoW Prioritization", "SDLC (Iterative & Incremental)", "Trello"]
+        "items": ["Agile / Scrum", "Kanban"]
       }
     ]
   },
   "projects": [
-        {
-      "title": "AgroVision-Edge | Crop vs Weed Detection",
+    {
+      "title": "Weather API Wrapper",
       "description": {
-        "en": "Edge-ready computer vision system using YOLOv8n to distinguish crops from weeds with mAP50=0.904. Optimized for on-device inference via ONNX export and INT8 quantization, cutting model size by 42% (6.25 → 3.60 MB) with only 1.84 mAP points lost. Includes CLI and an interactive Streamlit demo.",
-        "es": "Sistema de visión por computadora para dispositivo edge usando YOLOv8n que distingue cultivo de maleza con mAP50=0.904. Optimizado para inferencia on-device mediante exportación a ONNX y cuantización INT8, reduciendo el tamaño del modelo un 42% (6.25 → 3.60 MB) con apenas 1.84 puntos de mAP perdidos. Incluye CLI y demo interactiva con Streamlit."
+        "en": "REST API in Python (FastAPI) that wraps the Visual Crossing weather service and exposes current weather, forecast, and history through a stable, versioned contract. Features Redis caching with per-datatype TTL, IP rate limiting, Pydantic validation, and 26 tests that run without network or Redis. Docker Compose spins up the API and Redis with a single command.",
+        "es": "API REST en Python (FastAPI) que envuelve el servicio climático Visual Crossing y expone clima actual, pronóstico e histórico mediante un contrato propio y versionado. Incluye caché en Redis con TTL por tipo de dato, rate limiting por IP, validación con Pydantic y 26 tests que corren sin red ni Redis. Docker Compose levanta la API y Redis con un solo comando."
       },
-      "tags": ["Computer Vision", "YOLO", "Edge AI", "ONNX", "INT8 Quantization", "Streamlit", "PyTorch"],
-      "githubUrl": "https://github.com/FabricioPorcelli/weed-detection",
-      "externalUrl": "https://agrovisionedge.streamlit.app/"
+      "tags": ["Python", "FastAPI", "REST API", "Redis", "Docker", "Pytest", "Caching"],
+      "githubUrl": "https://github.com/FabricioPorcelli/weather-api",
+      "externalUrl": "#"
+    },
+    {
+      "title": "Weather Dashboard",
+      "description": {
+        "en": "Static web dashboard that shows current weather and a 5-day forecast for any location picked on an interactive Leaflet map. Built with vanilla JavaScript and ES Modules (no frameworks, no build step), it consumes the Weather API with parallel requests, renders temperature charts with Chart.js, and maps HTTP error codes to clear UI states.",
+        "es": "Dashboard web estático que muestra el clima actual y el pronóstico de 5 días para cualquier ubicación elegida en un mapa interactivo (Leaflet). Construido con JavaScript vanilla y ES Modules (sin frameworks ni build), consume la Weather API con requests en paralelo, grafica temperaturas con Chart.js y traduce los códigos de error HTTP a estados claros en la UI."
+      },
+      "tags": ["JavaScript", "Leaflet", "Chart.js", "REST API", "Vanilla JS", "Frontend"],
+      "githubUrl": "https://github.com/FabricioPorcelli/weather-dashboard",
+      "externalUrl": "#"
     },
     {
       "title": "Agricultural Yield Forecasting",
@@ -54,6 +74,16 @@
       "githubUrl": "https://github.com/FabricioPorcelli/yield-forecasting",
       "externalUrl": "#",
       "working": true
+    },
+    {
+      "title": "AgroVision-Edge | Crop vs Weed Detection",
+      "description": {
+        "en": "Edge-ready computer vision system using YOLOv8n to distinguish crops from weeds with mAP50=0.904. Optimized for on-device inference via ONNX export and INT8 quantization, cutting model size by 42% (6.25 → 3.60 MB) with only 1.84 mAP points lost. Includes CLI and an interactive Streamlit demo.",
+        "es": "Sistema de visión por computadora para dispositivo edge usando YOLOv8n que distingue cultivo de maleza con mAP50=0.904. Optimizado para inferencia on-device mediante exportación a ONNX y cuantización INT8, reduciendo el tamaño del modelo un 42% (6.25 → 3.60 MB) con apenas 1.84 puntos de mAP perdidos. Incluye CLI y demo interactiva con Streamlit."
+      },
+      "tags": ["Computer Vision", "YOLO", "Edge AI", "ONNX", "INT8 Quantization", "Streamlit", "PyTorch"],
+      "githubUrl": "https://github.com/FabricioPorcelli/weed-detection",
+      "externalUrl": "https://agrovisionedge.streamlit.app/"
     },
     {
       "title": "Data Warehousing & Business Intelligence",
@@ -74,7 +104,9 @@
       "tags": ["Agentic RAG", "ChromaDB", "FAISS", "Graph DBs", "LangChain", "LLM APIs", "NLP"],
       "githubUrl": "https://github.com/FabricioPorcelli/NLP-TUIA-TF",
       "externalUrl": "#"
-    },
+    }
+  ],
+  "archivedProjects": [
     {
       "title": "Solar Energy Forecasting (Machine Learning & MLOps)",
       "description": {

@@ -43,17 +43,19 @@
         <div class="hero-content fade-in">
           <div class="hero-text">
             <p class="hero-greeting"><span class="comment">//</span> <span data-i18n="hero.greeting">hello, i'm</span></p>
-            <h1 class="hero-name">Fabricio Porcelli.</h1>
+            <h1 class="hero-name">Fabricio Porcelli</h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">
               <span class="accent-blue">AI & Machine Learning</span>
               <span class="accent-green">Engineer</span>
             </p>
-            <p class="hero-desc" data-i18n="hero.desc">
-              skilled in end-to-end machine learning, data preparation, model evaluation, and
-              computer vision. Proficient in Python, SQL, ETL design, and business process
-              automation, with practical experience deploying analytics solutions and pursuing
-              AWS Data Engineering certification.
-            </p>
+          <p class="hero-desc" data-i18n="hero.desc">
+            Developer focused on Python, databases, and backend, with knowledge of data
+            science and machine learning applied to end-to-end projects. Interested in
+            building and maintaining systems that integrate data and AI models into real
+            products, prioritizing solving concrete problems over any specific technology.
+            Currently expanding experience in REST APIs, production deployment, and
+            integrating language models into backend applications.
+          </p>
             <div class="hero-actions">
               <a href="mailto:fabricioporcelli@gmail.com" class="btn btn-primary" data-i18n="hero.contact">Contact me</a>
               <a href="#proyectos" class="btn btn-outline" data-i18n="hero.projects">View projects <span class="arrow">→</span></a>
@@ -75,6 +77,17 @@
           <div class="section-line"></div>
         </div>
         <div class="projects-grid" id="projects-grid"></div>
+        <div class="projects-archive">
+          <button class="archive-toggle" id="archive-toggle" aria-expanded="false" aria-controls="archive-grid">
+            <span data-i18n="projects.archive">older projects</span>
+            <svg class="archive-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="archive-collapse" id="archive-collapse">
+            <div class="archive-inner">
+              <div class="projects-grid" id="archive-grid"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
